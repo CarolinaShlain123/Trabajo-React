@@ -1,7 +1,12 @@
-const Carrito=()=>{
+const Carrito = () =>
+{
     return(
-    <div className="fa-sharp fa-solid fa-cart-shopping">hola hola</div>
-    )
-    
-}
-export default Carrito;
+         
+         <div className="cart">
+         <a class="bi bi-cart" href="a">4</a>
+         </div>
+         
+       )
+   }
+
+   export default Carrito;

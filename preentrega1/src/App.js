@@ -1,16 +1,16 @@
 import './App.css';
-import NavBar from './componentes/navBar/navBar';
-import Producto from './componentes/productos/productos'
+import NavBar from './componentes/NavBar/NavBar';
+import Saludo from './componentes/ItemListContainer/ItemListContainer'
+
 
 function App() {
   return (
     <div className="App">
       <header className="navBar">
       <NavBar/>
-
       </header>
-      <Producto message= 'bienvenidos a la pagina'/>
-    </div>
+      <Saludo greeting='Bienvenidos a la pagina' />
+      </div>
   );
 }
 
