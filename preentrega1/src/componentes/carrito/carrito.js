@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 const Carrito = () =>
 {
     return(
          
          <div className="cart">
-         <a class="bi bi-cart" href="a">4</a>
+         <Link class="bi bi-cart" to="/carrito">4</Link>
          </div>
+         
          
        )
    }
