@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
+import './carrito.css'
 const Carrito = () =>
 {
     return(
          
          <div className="cart">
-         <Link class="bi bi-cart" to="/carrito">4</Link>
+         <box-icon name="cart"></box-icon>
+         <span className="item__total">5</span>
          </div>
-         
          
        )
    }
 
    export default Carrito;
+ 
