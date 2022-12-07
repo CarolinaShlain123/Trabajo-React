@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import'./itemDetail.css'
 
 
 function ItemDetail ({prod}) {
@@ -23,12 +24,16 @@ botonAumentar()
   } 
   return(
     <div className='contenedorDetalle'>
-      <h2 className='nombre'>{prod.nombre} </h2>
-      <img className='imagen' src={prod.imagen} alt={prod.id} />
+      <div className='items'>
+      <h2 className='title'>{prod.nombre} </h2>
+      <img className='imagen' src={prod.image} alt={prod.id} />
       <p className='precio'>${prod.precio} </p>
+      </div>
+      <div className='botoncant'>
       <button onClick= {botonAumentar}>+</button>
-      <button onClick= {botonBajar}>-</button>
       <div className='cantidad'>Cantidad:{contador}</div>
+      <button onClick= {botonBajar}>-</button>
+      </div>
     </div>
   )
 }

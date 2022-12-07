@@ -1,0 +1,23 @@
+.title{
+    font-size: 2rem;
+    padding: 5rem 0 0 0;
+    color: blueviolet;
+}
+.imagen {
+    width: 400px;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.botonCant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.precio{
+    font-size: 2rem;
+    color: #1a202c;
+}

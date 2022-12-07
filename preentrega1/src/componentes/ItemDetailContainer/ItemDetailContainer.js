@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     fetch("/data/data.json")
       .then((res) => res.json())
-      .then((data) => setProd(data.find((item) => (item.id = parseInt(id)))));
+      .then((data) => setProd(data.find((item) => (item.id === parseInt(id)))));
   }, [id]);
   return (
     <div className="item-container">
