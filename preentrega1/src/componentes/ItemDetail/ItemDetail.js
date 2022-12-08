@@ -28,9 +28,9 @@ function ItemDetail({ prod }) {
         <p className="precio">${prod.precio} </p>
       </div>
       <div className="botoncant">
-        <button onClick={botonAumentar}>+</button>
-        <div className="cantidad">Cantidad:{contador}</div>
         <button onClick={botonBajar}>-</button>
+        <div className="cantidad">Cantidad:{contador}</div>
+        <button onClick={botonAumentar}>+</button>
       </div>
     </div>
   );

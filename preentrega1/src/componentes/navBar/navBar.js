@@ -9,7 +9,10 @@ const NavBar= ()=>{
             <nav className="nav">  
             <Link className="home" to="/">Home</Link>
             <Link className="productos" to="/productos">Productos</Link>
+            <Link className="categoria" to={'/categoria/original'}>Originales</Link>
+            <Link className="categoria" to={'/categoria/edicionEspecial'}>Edicion especial</Link>
             <Link className="carrito" to="/carrito"><Cart /></Link>
+            
             </nav>
             
         </div>
