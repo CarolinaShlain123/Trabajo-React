@@ -16,11 +16,6 @@
     justify-content: center;
     align-items: center;
 }
-.botonCant{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .precio{
     font-size: 2rem;
     color: #1a202c;

@@ -6,7 +6,7 @@
     width: 45px;
     height: 45px;
   }
-  .cart span{
+  .cartSpan{
     position: absolute;
     top: -1rem;
     right: -1.5rem;

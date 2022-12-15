@@ -8,10 +8,11 @@ import Carrito from './componentes/Carrito/Carrito'
 import 'boxicons';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import ItemListCategorias from './componentes/Categoria/Categoria';
-
+import CarritoProvider from '../src/context/CarritoContext'
 function App() {
   return (
     <BrowserRouter>
+     <CarritoProvider>
       <NavBar/> 
       <Routes>
         <Route exact path="/" element={<Home/>} />
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/carrito" element={<Carrito/>}/>
         <Route exact path="/DetalleProducto/:id" element={<ItemDetailContainer />} />
       </Routes>
+      </CarritoProvider>
   </BrowserRouter>
 );
 }

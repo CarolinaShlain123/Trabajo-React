@@ -1,36 +1,28 @@
 import React, { useState } from "react";
 import "./itemDetail.css";
+import { useCarritoContext } from "../../context/CarritoContext";
+import ItemCount from '../ItemCount/ItemCount'
 
-function ItemDetail({ prod }) {
-  const [contador, setContador] = useState(0);
+function ItemDetail ( { prod } ) { 
 
-  const botonAumentar = () => {
-    setContador(contador + 1);
-    if (contador >= prod.stock) {
-      botonBajar();
-    } else {
-      botonAumentar();
-    }
-  };
-  const botonBajar = () => {
-    setContador(contador - 1);
-    if (contador <= 0) {
-      botonAumentar();
-    } else {
-      botonBajar();
-    }
-  };
+  const [goToCart, setGoToCart] = useState(false);
+  const { agregarProducto } = useCarritoContext();
+
+
+
+  const onAdd = (contador)  => {
+     setGoToCart(true);
+       agregarProducto(prod , contador);
+     
+   }
+
   return (
     <div className="contenedorDetalle">
       <div className="items">
         <h2 className="title">{prod.nombre} </h2>
         <img className="imagen" src={prod.image} alt={prod.id} />
         <p className="precio">${prod.precio} </p>
-      </div>
-      <div className="botoncant">
-        <button onClick={botonBajar}>-</button>
-        <div className="cantidad">Cantidad:{contador}</div>
-        <button onClick={botonAumentar}>+</button>
+        <ItemCount prod={prod} cantidad={prod.stock} onAdd={onAdd}/> 
       </div>
     </div>
   );

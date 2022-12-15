@@ -1,0 +1,23 @@
+.carrito{
+    padding: 5rem 2rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    gap: 3rem 1rem;
+    box-sizing: border-box;
+}
+.nombre{
+    font-size: 2rem;
+    padding: 5rem 0 0 0;
+    color: blueviolet;
+}
+
+ 
+.precio{
+    font-size: 2rem;
+    color: #1a202c;
+}
+.vaciarCarro{
+    color: blueviolet;
+    font-size: 1.5rem;
+}

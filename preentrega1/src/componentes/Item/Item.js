@@ -16,7 +16,6 @@ const Item = ({ data }) => {
             <Link className="btn" to={`/DetalleProducto/ ${data.id}`}>
               Ver detalle
             </Link>
-            <button className="btn"> Añadir al carrito</button>
           </div>
         </div>
       </div>
