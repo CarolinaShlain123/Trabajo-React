@@ -1,31 +1,43 @@
-import './item-list-container.css'
-import { useState,useEffect } from 'react'
-import Item from '../Item/Item'
+import "./item-list-container.css";
+import { useState, useEffect } from "react";
+import Item from "../Item/Item";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
-// Inicamos estado
-const [posts, setPosts] = useState([]);
+  // Inicamos estado
+  const [productos, setProductos] = useState([]);
 
-// Enganchamos el fetch a la mutacion del estado.
-useEffect(()=>{
+  // Enganchamos el fetch a la mutacion del estado.
+  useEffect(() => {
+    // Hacemos la llamada al Firebase.
 
- // Hacemos la llamada al Json.
-    fetch('/data/data.json')
-    .then((res) => res.json())
-    .then((obj) => setPosts(obj));
+    const db = getFirestore();
 
-    // pasamos como segundo parametro un array vacio, para indicar que se ejecute al redireccionar.
-},[])
+    const itemsCollection = collection(db, "productos");
 
-return(
-    <div className='productos'>
-        {posts.map((prod)=>
-        <Item data={prod}
-         key={prod.id}
-         />
-         )}
-    </div>
-)
-}
+    getDocs(itemsCollection).then((snapshot) => {
+      const productos = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setProductos(productos);
+    });
+  }, []);
+  // pasamos como segundo parametro un array vacio, para indicar que se ejecute al redireccionar.
+
+  return (
+      <div className="productos">
+        {productos.length === 0 ? (
+          <div>Cargando...</div>
+        ) : (
+          <div>
+            {productos.map((producto) => (
+              <Item producto={producto} key={producto.id} />
+            ))}
+          </div>
+        )}
+      </div>
+  );
+};
 
 export default ItemListContainer;

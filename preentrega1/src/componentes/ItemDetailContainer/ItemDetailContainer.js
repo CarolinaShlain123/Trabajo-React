@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
-const ItemDetailContainer = () => {
-  const [prod, setProd] = useState([]);
+const ItemDetailContainer = ({id}) => {
+  const [producto, setProducto] = useState([]);
 
-  const { id } = useParams();
 
   useEffect(() => {
-    fetch("/data/data.json")
-      .then((res) => res.json())
-      .then((data) => setProd(data.find((item) => (item.id === parseInt(id)))));
+    const db = getFirestore();
+    const itemRef = doc(db, 'productos', id);
+    getDoc(itemRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProducto({ id: snapshot.id, ...snapshot.data() });
+      }
+    });
   }, [id]);
+
   return (
     <div className="item-container">
-      <ItemDetail prod={prod} />
+      {!producto ? <div>Cargando...</div> : <ItemDetail producto={producto} />}
     </div>
   );
 };
+
+ 
 
 export default ItemDetailContainer;

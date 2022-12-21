@@ -12,7 +12,6 @@ const ItemListCategorias = () => {
       .then((data) =>
         setProd(data.filter((item) => item.categoria === (categoria)))
       );
-      console.log(prod)
   }, [categoria]);
   
   return (
