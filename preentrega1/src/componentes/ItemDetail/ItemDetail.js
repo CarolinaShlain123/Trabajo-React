@@ -3,7 +3,7 @@ import "./itemDetail.css";
 import { useCarritoContext } from "../../context/CarritoContext";
 import ItemCount from '../ItemCount/ItemCount'
 
-function ItemDetail ( { producto } ) { 
+function ItemDetail ( { data } ) { 
 
   const [irALCarro, setIrALCarro] = useState(false);
   const { agregarProducto } = useCarritoContext();
@@ -12,17 +12,17 @@ function ItemDetail ( { producto } ) {
 
   const onAdd = (contador)  => {
     setIrALCarro(true);
-       agregarProducto(producto , contador);
+       agregarProducto(data , contador);
      
    }
 
   return (
     <div className="contenedorDetalle">
       <div className="items">
-        <h2 className="title">{producto.nombre} </h2>
-        <img className="imagen" src={producto.image} alt={producto.id} />
-        <p className="precio">${producto.precio} </p>
-        <ItemCount productos={producto} cantidad={producto.stock} onAdd={onAdd}/> 
+        <h2 className="title">{data.nombre} </h2>
+        <img className="imagen" src={data.image} alt={data.id} />
+        <p className="precio">${data.precio} </p>
+        <ItemCount prod={data} stock={data.stock} onAdd={onAdd}/> 
       </div>
     </div>
   );

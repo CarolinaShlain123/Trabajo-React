@@ -1,35 +1,32 @@
 import "./item-list-container.css";
 import { useState, useEffect } from "react";
-import Item from "../Item/Item";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import ItemList from "../ItemList/ItemList";
+import { getFirestore, collection, getDocs ,where, query } from "firebase/firestore";
+import  {useParams} from 'react-router-dom' 
 
 const ItemListContainer = () => {
-  const [productos, setProductos] = useState([]);
-
+  const [data, setData] = useState([]);
+  const {categoriaId} = useParams();
+ 
   useEffect(() => {
-    const db = getFirestore();
-    const itemsCollection = collection(db, "productos");
-    getDocs(itemsCollection).then((snapshot) => {
-      const productos = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setProductos(productos);
-    });
-  }, []);
-  // pasamos como segundo parametro un array vacio, para indicar que se ejecute al redireccionar.
+    
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'productos');
+    if(categoriaId){
+      const queryFilter = query(queryCollection, where('categoria', '==', categoriaId))
+      getDocs(queryFilter)
+        .then(res => setData(res.docs.map(prod => ({id:prod.id, ...prod.data()}))))
+    }else{
+      getDocs(queryCollection)
+      .then(res => setData(res.docs.map(prod => ({id: prod.id, ...prod.data()}))))
+      
+    }
+  
+}, [categoriaId]);
 
   return (
     <div className="productosContainer">
-      {productos.length === 0 ? (
-        <div>Cargando...</div>
-      ) : (
-        <div>
-          {productos.map((producto) => (
-            <Item producto={producto} key={producto.id} />
-          ))}
-        </div>
-      )}
+     <ItemList data= {data}/>
     </div>
   );
 };
