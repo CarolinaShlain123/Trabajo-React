@@ -19,7 +19,7 @@ function ItemDetail ( { data } ) {
   return (
     <div className="contenedorDetalle">
       <div className="items">
-        <h2 className="title">{data.nombre} </h2>
+        <h2 className="nombre">{data.nombre} </h2>
         <img className="imagen" src={data.image} alt={data.id} />
         <p className="precio">${data.precio} </p>
         <ItemCount prod={data} stock={data.stock} onAdd={onAdd}/> 

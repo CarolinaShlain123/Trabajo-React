@@ -7,4 +7,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgb(255, 226, 244);
+}
+
+h1 {
+    font-size: 4rem;
+    color: rgb(194, 116, 194);
+    font-family: 'Blackadder ITC';
 }

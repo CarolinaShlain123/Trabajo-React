@@ -26,10 +26,10 @@ const ItemCount = ({ prod, onAdd }) => {
   
     return (
       
-        <div className="botoncant">
-          <button onClick={botonBajar}>-</button>
+        <div className="botonCant">
+          <button className="boton" onClick={botonBajar}>-</button>
           <div className="cantidad">Cantidad:{contador}</div>
-          <button onClick={botonAumentar}>+</button>
+          <button className="boton" onClick={botonAumentar}>+</button>
           <button className="btn" onClick={agregarProducto}> Añadir al carrito</button>
         </div>
     );

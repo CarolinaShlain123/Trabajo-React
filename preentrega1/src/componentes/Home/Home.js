@@ -5,7 +5,7 @@ import './home.css'
 const Home = () => {
     return (
       <div className="div">
-        <h1>Bienvenidos Harry's Book</h1>
+        <h1>Bienvenidos a Harry's Book</h1>
           <img src={IMG} alt="" className="img-main"/>
           <img src={IMG2} alt="" className="img-main"/>
       </div>

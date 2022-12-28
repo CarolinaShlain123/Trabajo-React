@@ -12,12 +12,11 @@ const Carrito = () => {
   } = useCarritoContext();
 
   return (
-    <>
+    <div className="todoCarro">
       <div className="carrito">
         {
-          <div>
-           
-            {carrito.map((prod, inicio) => (
+       <div>
+           {carrito.map((prod, inicio) => (
               <div className="detalle" key={inicio}>
                 <div>
                   <div className="descripcion">
@@ -31,7 +30,6 @@ const Carrito = () => {
                         disabled={prod.stock <= 0 && productoRepetido(prod.id)}
                         onClick={() => borrarProducto(prod.id)}
                       >
-                       
                         Eliminar
                       </button>
                       <button onClick={() => borrarArticulo(prod.id)}>
@@ -46,12 +44,12 @@ const Carrito = () => {
         }
       </div>
       <div>
-        <p className="nombre">Total: ${precioTotal()}</p>
+        <p className="titulo">Total: ${precioTotal()}</p>
         <button onClick={limpiarCarrito} className="vaciarCarro">
           Vaciar Carrito
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

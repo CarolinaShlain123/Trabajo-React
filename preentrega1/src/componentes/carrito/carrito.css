@@ -3,19 +3,25 @@
     margin: 0 auto;
     gap: 3rem 1rem;
     box-sizing: border-box;
+    
 }
-.nombre{
+.titulo{
     font-size: 2rem;
     padding: 5rem 0 0 0;
-    color: blueviolet;
+    color: rgb(212, 63, 218);
 }
 
  
 .precio{
-    font-size: 2rem;
-    color: #1a202c;
+    font-size: 30px;
+    color: rgb(0, 0, 0, .555);
+    text-transform: uppercase;
 }
 .vaciarCarro{
-    color: blueviolet;
+    color: rgb(212, 63, 218);
     font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.todoCarro {
+    background-color: rgb(255, 226, 244);
 }
