@@ -15,7 +15,7 @@ const ItemCount = ({ prod, onAdd }) => {
     const botonBajar = () => {
       setContador(contador - 1);
       if (contador <= 0) {
-        botonAumentar();
+        setContador(0);
       } else {
         botonBajar();
       }

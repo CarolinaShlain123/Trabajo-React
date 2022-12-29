@@ -19,18 +19,19 @@ const ContactForm = () => {
       id: producto.id,
       nombre: producto.nombre,
       precio: producto.precio,
-      cantidad: producto.cantidad,
+      stock: producto.stock,
     })),
     total: precioTotal(),
   };
   console.log(Object.values(form));
-
+console.log(venta)
   const terminarCompra = (ev) => {
     ev.preventDefault();
       const db = getFirestore();
       const userCollection = collection(db, 'ventas');
       addDoc(userCollection, venta).then((res) => {
-        setForm({name: "",
+        setForm({
+          name: "",
         email: "",
         telefono: "",})
         
@@ -47,8 +48,9 @@ const ContactForm = () => {
    return (
     <div className="mensajeExito">
       {typeof id !== "undefined" ? (
-        <div className="mensaje">
-          <p >Su mensaje se ha enviado correctamente!</p>
+        <div className="titulo">
+          <h1>Su compra ha sido exitosa!</h1>
+          <h3 >Gracias por elegirnos!</h3>
         </div>
       ) : (
         // Envio los datos del formulario que ya estan en el estado.
