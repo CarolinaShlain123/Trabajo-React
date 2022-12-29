@@ -1,5 +1,6 @@
 import "./carrito.css";
 import { useCarritoContext } from "../../context/CarritoContext";
+import { Link } from "react-router-dom";
 
 const Carrito = () => {
   const {
@@ -45,6 +46,9 @@ const Carrito = () => {
       </div>
       <div>
         <p className="titulo">Total: ${precioTotal()}</p>
+        <Link to={'/FormularioVenta'} className="vaciarCarro">
+          Terminar compra
+        </Link>
         <button onClick={limpiarCarrito} className="vaciarCarro">
           Vaciar Carrito
         </button>
