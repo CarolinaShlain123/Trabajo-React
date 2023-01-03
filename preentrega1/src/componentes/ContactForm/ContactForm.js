@@ -23,8 +23,7 @@ const ContactForm = () => {
     })),
     total: precioTotal(),
   };
-  console.log(Object.values(form));
-console.log(venta)
+  
   const terminarCompra = (ev) => {
     ev.preventDefault();
       const db = getFirestore();
