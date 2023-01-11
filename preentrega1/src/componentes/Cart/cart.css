@@ -6,10 +6,10 @@
     width: 45px;
     height: 45px;
   }
-  .cartSpan{
+  .cartTotal{
     position: absolute;
-    top: -1rem;
-    right: -1.5rem;
+    top: -2rem;
+    right: -2.5rem;
     width: 2.5rem;
     height: 2.5rem;
     border: 1px solid red;

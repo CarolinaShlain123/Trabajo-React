@@ -10,7 +10,7 @@ function Cart() {
       <Link to="/carrito">
         <box-icon name="cart"></box-icon>
       </Link>
-      <p className="cartSpan">{parseInt(cantidadItem())}</p>
+      <p className="cartTotal">{parseInt(cantidadItem())}</p>
     </div>
   );
 }

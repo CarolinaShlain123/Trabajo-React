@@ -23,9 +23,8 @@ const NavBar = () => {
           Edicion especial
         </Link>
 
-        <Link className="carrito" to="/carrito">
           <Cart />
-        </Link>
+        
       </nav>
     </div>
   );

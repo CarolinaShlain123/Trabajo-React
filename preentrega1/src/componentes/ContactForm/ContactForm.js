@@ -1,4 +1,3 @@
-import { toast } from "react-hot-toast";
 import "./contactForm.css";
 import { useState } from "react";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
@@ -34,7 +33,7 @@ const ContactForm = () => {
         email: "",
         telefono: "",})
         
-        toast.success(`Su Compra ${res.id} se realizó Correctamente`);
+        alert (`Su Compra ${res.id} se realizó Correctamente`);
         setId(res.id);
         limpiarCarrito();
       });

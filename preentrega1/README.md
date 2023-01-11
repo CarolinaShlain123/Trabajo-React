@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Harry's Book
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto: Página web de venta de libros de Harry Potter
 
-## Available Scripts
 
-In the project directory, you can run:
+🛠️ Realizado con :
 
-### `npm start`
+![image](https://user-images.githubusercontent.com/105647455/204136896-89305a7e-def0-4fff-83b9-0cf10a8fc336.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ 📋 Resumen :
 
-### `npm test`
+La propuesta trata sobre un sitio web de venta de libros de Harry Potter. En dicho sitio web, el usuario podrá navegar y ver los distintos libros que estan a la venta y aprovechar descuentos increibles. En la pagina el usuario podra elegir que categoria seleccionar y cuantos libros va a querer sumarle al carrito para luego poder comprarlos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+✅ Secciones 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+La página web contiene las siguientes secciones:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. HOME 
+2. PRODUCTOS
+3. DETALLE
+4. CATEGORIAS
+5. CARRITO
+6. FORMULARIO DE VENTA
+...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1️⃣ HOME
 
-### `npm run eject`
+Esta es la página principal que el usuario verá cuando busque la página en la web o se dirija directamente al Home. La misma muestra el titulo de la pagina y podra observar algunas imagenes de los libros que hay para comprar .
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2️⃣ PRODUCTOS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Se muestra una lista de todos los productos que puede seleccionar. Cada uno tiene su precio y tiene la opcion de ver el detalle .
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3️⃣ DETALLE
 
-## Learn More
+En esta sección el usuario podrá observar mejor el producto que selecciono, estara el nombre del libro, la imagen, el precio y tambien vera la opcion de agregar dicho producto al carrito y, si es asi,  la cantidad de libros que va a querer .
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4️⃣ CATEGORIAS
+ 
+En el NavBar el ususario puede observar que hay distintas categorias para seleccionar, si el ususario accede a una de esas categorias podra observar los libros de dicha categoria y seleccionar el producto que desee .
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5️⃣ CARRITO
 
-### Code Splitting
+Aquí el usuario podrá acceder a su carrito que estuvo llenando a lo largo de su navegacion por el sitio. En el vera la opcion de eliminar la cantidad de alguno de sus productos, eliminar un producto, vaciar el carrito, lo cual dejara el carro vacio, el precio total de todos los productos que selecciono y la opcion de terminar compra .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6️⃣ FORMULARIO DE VENTA
+ 
+ Cuando el usuario selecciona la opcion de terminar compra, el sitio web lo dirige a un formulario de venta, donde debera completar su nombre, su mail y su numero de telefono, una vez que el usuario complete los campos vera que aparece una alerta que la compra se realizo exitosamente y lo llevara a otra pagina que podra observar un mensaje que dice gracias por elegirnos .
 
-### Analyzing the Bundle Size
+ # Documentación  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Librerias en el proyecto : 
 
-### Making a Progressive Web App
+ * React-router-dom (Navegación de la web)
+ * React-hot-toast (Alertas en interacciones)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+ ## Almacenamiento : 
+ _LocalStorage_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Base de datos NoSQL
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Firebase (Implementación de FireStore para la base de datos, y Storage para las imagenes. ).
 
-### `npm run build` fails to minify
+ ## Organización  de componentes :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ En el archivo Index.js implementamos Firebase por importación , llamando a un archivo config.js dentro de la carpeta firebase, que en dicho archivo posee la informacion de nuestro proyecto.
+
+Luego en App.js implementamos por _import_ las librerias anteriormente mencionadas. A su vez, la estructura de la navegación proporcionada por react-router-dom , nos permite navegar a los siguientes componentes : 
+ Home (pagina principal), ItemListContainer (Productos),
+Categorias (que se encuentra dentro del componente ItemListContainer, que nos permite filtrar por las distintas categorias que hay.), ItemDetailContainer (que nos permite ver el detalle del producto.), Carrito (carrito de compras) y ContactForm (formulario de compra.)
+
+**Es una App sencilla pero funcional, Agradecimiento al profesor [Felix Blanco](https://www.linkedin.com/in/felixblancos/)** por las clases fueron exelentes y super claras.  
+
+# Creador del sitio web :
+[Carolina Shlain](https://github.com/CarolinaShlain123/Trabajo-React.git). 
