@@ -52,21 +52,21 @@ Aquí el usuario podrá acceder a su carrito que estuvo llenando a lo largo de s
 
  # Documentación  
 
- Librerias en el proyecto : 
+## Librerias en el proyecto : 
 
  * React-router-dom (Navegación de la web)
  * React-hot-toast (Alertas en interacciones)
 
 
-  Almacenamiento : 
+ ## Almacenamiento : 
  _LocalStorage_
 
 
- Base de datos NoSQL
+## Base de datos NoSQL
 
 * Firebase (Implementación de FireStore para la base de datos, y Storage para las imagenes. ).
 
- Organización  de componentes :
+ ## Organización  de componentes :
 
  En el archivo Index.js implementamos Firebase por importación , llamando a un archivo config.js dentro de la carpeta firebase, que en dicho archivo posee la informacion de nuestro proyecto.
 
@@ -76,5 +76,5 @@ Categorias (que se encuentra dentro del componente ItemListContainer, que nos pe
 
 **Es una App sencilla pero funcional, Agradecimiento al profesor [Felix Blanco](https://www.linkedin.com/in/felixblancos/)** por las clases fueron exelentes y super claras.  
 
-# Creador del sitio web :
+** Creador del sitio web: **
 [Carolina Shlain](https://github.com/CarolinaShlain123/Trabajo-React.git). 
