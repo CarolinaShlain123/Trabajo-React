@@ -50,7 +50,7 @@ Aquí el usuario podrá acceder a su carrito que estuvo llenando a lo largo de s
  
  Cuando el usuario selecciona la opcion de terminar compra, el sitio web lo dirige a un formulario de venta, donde debera completar su nombre, su mail y su numero de telefono, una vez que el usuario complete los campos vera que aparece una alerta que la compra se realizo exitosamente y lo llevara a otra pagina que podra observar un mensaje que dice gracias por elegirnos .
 
- # Documentación  
+ ## Documentación  
 
 ## Librerias en el proyecto : 
 
@@ -76,5 +76,5 @@ Categorias (que se encuentra dentro del componente ItemListContainer, que nos pe
 
 **Es una App sencilla pero funcional, Agradecimiento al profesor [Felix Blanco](https://www.linkedin.com/in/felixblancos/)** por las clases fueron exelentes y super claras.  
 
-** Creador del sitio web: **
+# Creador del sitio web: 
 [Carolina Shlain](https://github.com/CarolinaShlain123/Trabajo-React.git). 
