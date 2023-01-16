@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './componentes/navBar/NavBar';
+import NavBar from './componentes/navBar/navBar';
 import Home from './componentes/Home/Home';
 import ItemListContainer from './componentes/ItemListContainer/ItemListContainer';
-import Carrito from './componentes/carrito/Carrito'
+import Carrito from './componentes/carrito/carrito'
 import 'boxicons';
 import ItemDetailContainer from './componentes/ItemDetailContainer/ItemDetailContainer';
 import ContactForm from './componentes/ContactForm/ContactForm';
